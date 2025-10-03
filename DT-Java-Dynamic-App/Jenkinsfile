@@ -22,7 +22,7 @@ pipeline {
         }
         
         stage('Build') {
-            steps {
+    dir("${env.WORKSPACE}") {
                 sh 'mvn clean package -DskipTests'
             }
         }
