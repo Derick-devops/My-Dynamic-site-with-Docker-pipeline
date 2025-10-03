@@ -30,7 +30,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir("${env.WORKSPACE/DT-Java-Dynamic-App}") {
+                dir("${env.WORKSPACE}/DT-Java-Dynamic-App") {
                     sh 'mvn clean package -DskipTests'
                 }
             }
