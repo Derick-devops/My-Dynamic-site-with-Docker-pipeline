@@ -67,8 +67,8 @@ pipeline {
                         script {
                             // Copy WAR and Dockerfile
                             sh """
-                                scp -o StrictHostKeyChecking=no target/java-webapp-devops.war ubuntu@${DOCKER_HOST_IP}:/home/ubuntu/app.war
-                                scp -o StrictHostKeyChecking=no Dockerfile ubuntu@${DOCKER_HOST_IP}:/home/ubuntu/Dockerfile
+                                scp -o StrictHostKeyChecking=no DT-Java-Dynamic-App/target/java-webapp-devops.war ubuntu@${DOCKER_HOST_IP}:/home/ubuntu/app.war
+                                scp -o StrictHostKeyChecking=no DT-Java-Dynamic-App/Dockerfile ubuntu@${DOCKER_HOST_IP}:/home/ubuntu/Dockerfile
                                 if [ -f src/main/resources/db/init.sql ]; then
                                     scp -o StrictHostKeyChecking=no src/main/resources/db/init.sql ubuntu@${DOCKER_HOST_IP}:/home/ubuntu/init.sql
                                 fi
